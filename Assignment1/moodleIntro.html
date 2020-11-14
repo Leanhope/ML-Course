@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html dir="ltr" xml:lang="de" class="no-js yui3-js-enabled" lang="de"><head>
+    <title>Kurs: Introduction to Machine Learning  WiSe2020</title>
+    <link rel="shortcut icon" href="https://moodle.uni-weimar.de/theme/image.php/essential/theme/1604064094/favicon">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="moodle, Kurs: Introduction to Machine Learning  WiSe2020">
+<link rel="stylesheet" type="text/css" href="moodleIntro_files/yui_combo_002.css"><script charset="utf-8" id="yui_3_17_2_1_1605372564823_8" src="moodleIntro_files/yui_combo_004.js" async=""></script><link charset="utf-8" rel="stylesheet" id="yui_3_17_2_1_1605372564823_51" href="moodleIntro_files/yui_combo.css"><script charset="utf-8" id="yui_3_17_2_1_1605372564823_52" src="moodleIntro_files/yui_combo_002.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1605372564823_64" src="moodleIntro_files/yui_combo_003.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1605372564823_197" src="moodleIntro_files/yui_combo.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1605372564823_198" src="moodleIntro_files/yui_combo_007.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1605372564823_219" src="moodleIntro_files/yui_combo_006.js" async=""></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="moodleIntro_files/all.css">
+<link rel="stylesheet" type="text/css" href="moodleIntro_files/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="moodleIntro_files/block.css">
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/moodle.uni-weimar.de","sesskey":"r7tAxc5OQo","themerev":"1604064094","slasharguments":1,"theme":"essential","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1604064094","admin":"admin","svgicons":true,"usertimezone":"Europa\/Berlin","contextid":291659};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/moodle.uni-weimar.de\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/moodle.uni-weimar.de\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/moodle.uni-weimar.de\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/moodle.uni-weimar.de\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/moodle.uni-weimar.de\/theme\/yui_combo.php?m\/1604064094\/","combine":true,"comboBase":"https:\/\/moodle.uni-weimar.de\/theme\/yui_combo.php?","ext":false,"root":"m\/1604064094\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader","moodle-core-event"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_ddimageortext-form":{"requires":["moodle-qtype_ddimageortext-dd","form_filepicker"]},"moodle-qtype_ddimageortext-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-qtype_ddmarker-form":{"requires":["moodle-qtype_ddmarker-dd","form_filepicker","graphics","escape"]},"moodle-qtype_ddmarker-dd":{"requires":["node","event-resize","dd","dd-drop","dd-constrain","graphics"]},"moodle-qtype_ddwtos-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_bigbluebuttonbn-modform":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-broker":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-imports":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-rooms":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-recordings":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_customcert-rearrange":{"requires":["dd-delegate","dd-drag"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_scheduler-delselected":{"requires":["base","node","event"]},"moodle-mod_scheduler-studentlist":{"requires":["base","node","event","io"]},"moodle-mod_scheduler-saveseen":{"requires":["base","node","event"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_generico-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-button":{"requires":["moodle-editor_atto-plugin","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/moodle.uni-weimar.de\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/moodle.uni-weimar.de\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1604064094\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/moodle.uni-weimar.de\/lib\/javascript.php\/1604064094\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/moodle.uni-weimar.de\/lib\/javascript.php\/1604064094\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google web fonts -->
+        <!-- iOS Homescreen Icons -->
+    
+<link rel="apple-touch-icon" sizes="57x57" href="https://moodle.uni-weimar.de/theme/image.php/essential/theme/1604064094/homeicon/iphone">
+<link rel="apple-touch-icon" sizes="72x72" href="https://moodle.uni-weimar.de/theme/image.php/essential/theme/1604064094/homeicon/ipad">
+<link rel="apple-touch-icon" sizes="114x114" href="https://moodle.uni-weimar.de/theme/image.php/essential/theme/1604064094/homeicon/iphone_retina">
+<link rel="apple-touch-icon" sizes="144x144" href="https://moodle.uni-weimar.de/theme/image.php/essential/theme/1604064094/homeicon/ipad_retina"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/first" src="moodleIntro_files/first.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/event" src="moodleIntro_files/event.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="moodleIntro_files/jquery-3.js"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body id="page-course-view-topics" class="format-topics  path-course path-course-view gecko dir-ltr lang-de yui-skin-sam yui3-skin-sam moodle-uni-weimar-de pagelayout-course course-27690 context-291659 category-9817 loggedin essential-colours-default desktopdevice pagewidthwide custommenuitems modeditingmenu has-region-side-pre used-region-side-pre has-region-footer-left empty-region-footer-left has-region-footer-middle empty-region-footer-middle has-region-footer-right empty-region-footer-right side-pre-only jsenabled"><div id="fullscreenfloat" title="Vollbildmodus umschalten. (Strg+Alt+b)" class="fullscreen" style="display: none;" hidden="hidden"></div>
+
+<div class="skiplinks">
+    <a href="#maincontent" class="skip">Zum Hauptinhalt</a>
+</div><script type="text/javascript" src="moodleIntro_files/yui_combo_005.js"></script><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div><script type="text/javascript" src="moodleIntro_files/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+<!--div class="gremienbanner" style="display:none; text-align:center;margin-top:45px;margin-bottom:-35px;">
+<a href="https://www.uni-weimar.de/wahlen" target="_blank" title="Gremienwahlen">
+<img src="https://moodle.uni-weimar.de/2020_gremienwahlen.png" alt="Gremienwahlen" width="100%" style="max-width: 900px" />
+</a>
+</div-->
+
+<!--div style="background-color:green; text-align:center;color:white;font-size:1.0em;margin-top:45px;margin-bottom:-35px;">BigBlueButton-Wartung beendet</div-->
+
+<!--div style="background-color:red; text-align:center;color:white;font-size:1.2em;margin-top:45px;margin-bottom:-35px;">BigBlueButton-Wartung am 30.10.2020 von 13:30 bis 21:00 Uhr. BBB wird nicht verfügbar sein.</div-->
+
+<div style="font-weight: 300;font-size: 1.0em !important;background-color:#aaa; text-align:center;color:#fff;font-size:1.1em;margin-top:45px;margin-bottom:-35px;">
+
+<!--p>Lernvideos zu BigBlueButton: <a style="color: #fff; text-decoration: underline;" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/#c346277" target="_blank">1. BBB-Einführung</a>; <a style="color: #fff; text-decoration: underline;" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/#c347861" target="_blank">2. Interaktionen und Feedbacks</a>; <a style="color: #fff; text-decoration: underline;" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/#c349795" target="_blank">3. Mikrofone nutzen</a>; <a style="color: #fff; text-decoration: underline;" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/#c353503" target="_blank">4. Zusammen Dokumente erstellen</a>; <span style="color:white;"><a style="color: #fff; text-decoration: underline;" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/#c354003" target="_blank">5. Online-Meetings aufnehmen (bitte Lernvideo ansehen)</a></span> 
+</p-->
+
+<p style="margin-top: 10px"><span style="background-color:red; color:white;">Hinweise zum Kurse anlegen via Bison:</span><span>
+ Das Anlegen von Kursen via Bison wurde für das WiSe 2020 am 18.09.2020 
+freigeschaltet. Wenden Sie sich bitte an Ihre Fakultät, falls Ihr Kurs 
+nicht im Bison-Connector erscheint. Sie können die Kurse in Moodle einen
+ Tag nach Eintrag in Bison anlegen.</span></p>
+
+<p style="margin-top: 10px">Bitte verkleinern Sie Videodateien, bevor Sie diese auf Moodle hochladen. <a style="color: #fff; text-decoration: underline;" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/#c358055" target="_blank">Ein Lernvideo dazu: Videodateien um 90% verkleinern (bei guter Qualität)</a></p>
+
+<!--p style="margin-top: 10px;color:#fff;background-color:green;">Moodle Störung behoben (heute zw. 11:56 und 12:15, nicht alle User betreffend).</p-->
+
+
+<!--div style="background-color:red; text-align:center;color:white;font-size:1.2em;margin-top:45px;margin-bottom:-35px;">Abschaltung Adobe Connect Plugin: Wir müssen das AC Plugin leider wegen Problemen abschalten. Sie können jedoch Adobe Connect weiter nutzen: https://webconf.vc.dfn.de/ Dort können Sie Meetings anlegen und die Links in Moodle hinterlegen. Alternativ können Sie BBB oder Pexip (https://my.conf.dfn.de/pexip/) nutzen.</div-->
+
+</div>
+
+
+<header role="banner">
+    <nav id="essentialnavbar" role="navigation" class="moodle-has-zindex nologo">
+        <div class="navbar">
+            <div class="container-fluid navbar-inner">
+                <div class="row-fluid">
+                    <div class="custommenus pull-left">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target="#essentialmenus">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://moodle.uni-weimar.de/">Lernplattform Bauhaus-Universität Weimar</a>                    <div class="pull-right">
+                        <div class="usermenu navbarrightitem">
+                            <ul class="nav"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="https://moodle.uni-weimar.de/course/view.php?id=27690"><img src="moodleIntro_files/f1.png" class="userpicture defaultuserpic" alt="Nutzerbild von Hans Lienhop" title="Nutzerbild von Hans Lienhop" width="72" height="72">Hans<span aria-hidden="true" class="fa fa-caret-right"></span></a><ul class="dropdown-menu pull-right"><li><a href="https://moodle.uni-weimar.de/user/profile.php?id=6594"><em><span aria-hidden="true" class="fa fa-user"></span>Hans Lienhop</em></a></li><li class="dropdown-submenu preferences"><a class="dropdown-toggle" data-toggle="dropdown" href="https://moodle.uni-weimar.de/course/view.php?id=27690"><em><span aria-hidden="true" class="fa fa-cog"></span>Einstellungen</em></a><ul class="dropdown-menu"><li><a href="https://moodle.uni-weimar.de/user/preferences.php?userid=6594"><em><span aria-hidden="true" class="fa fa-user"></span>Nutzer</em></a></li><li><a href="https://moodle.uni-weimar.de/user/edit.php?id=6594"><em><span aria-hidden="true" class="fa fa-info-circle"></span>Profil bearbeiten</em></a></li><li><a href="https://moodle.uni-weimar.de/login/change_password.php"><em><span aria-hidden="true" class="fa fa-key"></span>Kennwort ändern</em></a></li><li><a href="https://moodle.uni-weimar.de/message/edit.php?id=6594"><em><span aria-hidden="true" class="fa fa-comments"></span>Mitteilung</em></a></li><li><a href="https://moodle.uni-weimar.de/blog/preferences.php"><em><span aria-hidden="true" class="fa fa-rss-square"></span>Blog</em></a></li></ul></li><hr class="sep"><li><a href="https://moodle.uni-weimar.de/calendar/view.php"><em><span aria-hidden="true" class="fa fa-calendar"></span>Kalender</em></a></li><li><a href="https://moodle.uni-weimar.de/message/index.php"><em><span aria-hidden="true" class="fa fa-envelope"></span>Mitteilungen</em></a></li><li><a href="https://moodle.uni-weimar.de/mod/forum/user.php?id=6594"><em><span aria-hidden="true" class="fa fa-list-alt"></span>Forumsbeiträge</em></a></li><li><a href="https://moodle.uni-weimar.de/mod/forum/user.php?id=6594&amp;mode=discussions"><em><span aria-hidden="true" class="fa fa-list"></span>Themen</em></a></li><hr class="sep"><li><a href="https://moodle.uni-weimar.de/grade/report/overview/index.php?userid=6594&amp;id=27690"><em><span aria-hidden="true" class="fa fa-list-alt"></span>Meine Bewertungen</em></a></li><li><a href="https://moodle.uni-weimar.de/grade/report/user/index.php?id=27690&amp;userid=6594"><em><span aria-hidden="true" class="fa fa-list-alt"></span>Kursbewertung</em></a></li><hr class="sep"><li><a href="https://moodle.uni-weimar.de/login/logout.php?sesskey=r7tAxc5OQo"><em><span aria-hidden="true" class="fa fa-sign-out"></span>Logout</em></a></li><li><a target="_blank" href="https://moodle.uni-weimar.de/blocks/ticket/create.php"><em><span aria-hidden="true" class="fa fa-question-circle"></span>Hilfe</em></a></li></ul></li></ul>                        </div>
+                        <div class="messagemenu navbarrightitem">
+                            <div class="popover-region collapsed popover-region-messages" id="nav-message-popover-container" data-userid="6594" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" role="button" aria-controls="popover-region-container-5fb00a948ac165fb00a94632488" aria-haspopup="true" aria-label="Mitteilungsfenster ohne neue Mitteilungen anzeigen" tabindex="0">
+                <i class="icon fa fa-comment fa-fw " title="Mitteilungen" aria-label="Mitteilungen"></i>
+        <div class="count-container hidden" data-region="count-container">0</div>
+
+    </div>
+    <div id="popover-region-container-5fb00a948ac165fb00a94632488" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Mitteilungsfenster" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Mitteilungen</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <div class="newmessage-link">
+            <a href="https://moodle.uni-weimar.de/message/index.php?contactsfirst=1">Neue Mitteilung
+            </a>
+        </div>
+        <a class="mark-all-read-button" href="#" role="button" title="Alle als gelesen markieren" data-action="mark-all-read">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " title="Alle als gelesen markieren" aria-label="Alle als gelesen markieren"></i></span>
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Laden ..." aria-label="Laden ..."></i></span>
+        </a>
+        <a href="https://moodle.uni-weimar.de/message/edit.php?id=6594" title="Mitteilungen">
+            <i class="icon fa fa-cog fa-fw " title="Mitteilungen" aria-label="Mitteilungen"></i>
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="messages" data-region="messages" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" data-region="empty-message" tabindex="0">Keine Mitteilungen</div>
+
+            </div>
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Laden ..." aria-label="Laden ..."></i></span>
+        </div>
+                <a class="see-all-link" href="https://moodle.uni-weimar.de/message/index.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Alle anzeigen</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed popover-region-notifications" id="nav-notification-popover-container" data-userid="6594" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" role="button" aria-controls="popover-region-container-5fb00a948b6025fb00a94632489" aria-haspopup="true" aria-label="Mitteilungsfenster ohne neue Systemnachrichten anzeigen" tabindex="0">
+                <i class="icon fa fa-bell fa-fw " title="Systemnachrichten" aria-label="Systemnachrichten"></i>
+        <div class="count-container hidden" data-region="count-container">0</div>
+
+    </div>
+    <div id="popover-region-container-5fb00a948b6025fb00a94632489" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Mitteilungsfenster" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Systemnachrichten</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button" href="#" title="Alle als gelesen markieren" data-action="mark-all-read" role="button">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " title="Alle als gelesen markieren" aria-label="Alle als gelesen markieren"></i></span>
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Laden ..." aria-label="Laden ..."></i></span>
+        </a>
+        <a href="https://moodle.uni-weimar.de/message/notificationpreferences.php?userid=6594" title="Systemnachrichten">
+            <i class="icon fa fa-cog fa-fw " title="Systemnachrichten" aria-label="Systemnachrichten"></i>
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications" data-region="all-notifications" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">Keine Systemnachrichten</div>
+
+            </div>
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Laden ..." aria-label="Laden ..."></i></span>
+        </div>
+                <a class="see-all-link" href="https://moodle.uni-weimar.de/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Alle anzeigen</div>
+                    </div>
+                </a>
+    </div>
+</div>                        </div>
+                        <div class="navbarrightitem">
+                            <ul class="nav"><li><a title="Zum Seitenende" href="#region-main"><span aria-hidden="true" class="fa fa-arrow-circle-o-down"></span></a></li></ul>                        </div>
+                        <div class="moodle-actionmenu navbarrightitem" id="action-menu-0" data-enhance="moodle-core-actionmenu" data-enhanced="1">
+
+        <ul class="menubar nav" id="action-menu-0-menubar" role="menubar">
+
+            
+            
+            <li role="presentation"><a href="#" class="toggle-display textmenu" id="action-menu-toggle-0" title="Kurseinstellungen" role="menuitem" aria-haspopup="true"><i class="icon fa fa-cog fa-fw " title="Kurseinstellungen" aria-label="Kurseinstellungen"></i><span aria-hidden="true" class="fa fa-caret-right"></span></a>
+</li>
+
+        </ul>
+
+
+        <ul class="menu align-tr-br" id="action-menu-0-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-0" role="menu" data-align="tr-br" aria-hidden="true">
+            <li role="presentation">
+
+    <a href="https://moodle.uni-weimar.de/enrol/apply/unenrolself.php?enrolid=58013" id="action_link5fb00a946324810" class="" role="menuitem"><i class="icon fa fa-user fa-fw " aria-hidden="true"></i>Ausschreiben aus 'Introduction to Machine L...-47657'</a>
+
+
+
+</li>
+        </ul>
+</div>                                                <div id="custom_menu_editing" class="navbarrightitem">
+                                                    </div>
+                        <div class="navbarrightitem">
+                                                    </div>
+                    </div>
+                        <div id="essentialmenus" class="nav-collapse collapse pull-left">
+                            <div id="custom_menu_language" class="custom_menu dropdownmenuscroll"><ul class="nav"><li class="dropdown langmenu"><a href="https://moodle.uni-weimar.de/course/view.php?id=27690" class="dropdown-toggle" data-toggle="dropdown" title="Sprache"><span aria-hidden="true" class="fa fa-flag"></span>Deutsch ‎(de)‎<span aria-hidden="true" class="fa fa-caret-right"></span></a><div class="dropdown-menu"><ul><li><a title="Deutsch ‎(de)‎" href="https://moodle.uni-weimar.de/course/view.php?id=27690&amp;lang=de"><span aria-hidden="true" class="fa fa-language"></span>Deutsch ‎(de)‎</a></li><li><a title="English ‎(en)‎" href="https://moodle.uni-weimar.de/course/view.php?id=27690&amp;lang=en"><span aria-hidden="true" class="fa fa-language"></span>English ‎(en)‎</a></li><li><a title="Español - Internacional ‎(es)‎" href="https://moodle.uni-weimar.de/course/view.php?id=27690&amp;lang=es"><span aria-hidden="true" class="fa fa-language"></span>Español - Internacional ‎(es)‎</a></li></ul></div></li></ul></div><div id="custom_menu_courses" class="custom_menu dropdownsubmenuscroll"><ul class="nav"><li class="dropdown"><a href="https://moodle.uni-weimar.de/course/view.php?id=27690" class="dropdown-toggle" data-toggle="dropdown" title="Meine Kurse"><span aria-hidden="true" class="fa fa-briefcase"></span>Meine Kurse<span aria-hidden="true" class="fa fa-caret-right"></span></a><div class="dropdown-menu"><ul><li><a title="Dashboard" href="https://moodle.uni-weimar.de/my/index.php"><span><span aria-hidden="true" class="fa fa-home"></span><span> Dashboard</span></span></a></li><li class="dropdown-submenu"><a href="https://moodle.uni-weimar.de/course/view.php?id=27690" class="dropdown-toggle" data-toggle="dropdown" title="Wintersemester 2020"><span><span aria-hidden="true" class="fa fa-folder-open"></span><span> Wintersemester 2020</span></span></a><ul class="dropdown-menu"><li><a title="Introduction to Machine L...-47657" href="https://moodle.uni-weimar.de/course/view.php?id=27690"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Introduction to Machine Learning  WiSe2020</span></a></li><li><a title="Physiological Computing...-47531" href="https://moodle.uni-weimar.de/course/view.php?id=27165"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Physiological Computing  WiSe2020</span></a></li><li><a title="Raumbezogene Informations...-46801" href="https://moodle.uni-weimar.de/course/view.php?id=27078"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Raumbezogene Informationssysteme/ Spatial information systems (GIS)  WiSe2020</span></a></li></ul></li><li class="dropdown-submenu"><a href="https://moodle.uni-weimar.de/course/view.php?id=27690" class="dropdown-toggle" data-toggle="dropdown" title="Sommersemester 2020"><span><span aria-hidden="true" class="fa fa-folder-open"></span><span> Sommersemester 2020</span></span></a><ul class="dropdown-menu"><li><a title="Projektbörse" href="https://moodle.uni-weimar.de/course/view.php?id=21402"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>PROJEKTBÖRSE SoSe 2020</span></a></li><li><a title="Advanced Numerical Mathem...-44976" href="https://moodle.uni-weimar.de/course/view.php?id=20056"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Advanced Numerical Mathematics  SoSe2020</span></a></li><li><a title="Digital Watermarking and ...-44952" href="https://moodle.uni-weimar.de/course/view.php?id=20200"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Digital Watermarking and Steganography  SoSe2020</span></a></li><li><a title="Quantenalgorithmen und Kr...-45690" href="https://moodle.uni-weimar.de/course/view.php?id=21725"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Quantum Algorithms and Cryptanalysis  SoSe2020</span></a></li><li><a title="Combined Camera and Proje...-46452" href="https://moodle.uni-weimar.de/course/view.php?id=22140"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Combined Camera and Projector Calibration for Real-time Tracking and Mapping  SoSe2020</span></a></li><li><a title="Bauhaus.Int Kollow WiSe 2019" href="https://moodle.uni-weimar.de/course/view.php?id=24041"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Bauhaus.Interaction Kolloquium SoSe 2020</span></a></li></ul></li><li class="dropdown-submenu"><a href="https://moodle.uni-weimar.de/course/view.php?id=27690" class="dropdown-toggle" data-toggle="dropdown" title="Semesterübergreifende Kurse"><span><span aria-hidden="true" class="fa fa-folder-open"></span><span> Semesterübergreifende Kurse</span></span></a><ul class="dropdown-menu"><li><a title="AlgEng" href="https://moodle.uni-weimar.de/course/view.php?id=20768"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Abschlussarbeiten Algorithm Engineering</span></a></li></ul></li><li class="dropdown-submenu"><a href="https://moodle.uni-weimar.de/course/view.php?id=27690" class="dropdown-toggle" data-toggle="dropdown" title="Vergangene Semester"><span><span aria-hidden="true" class="fa fa-folder-open"></span><span> Vergangene Semester</span></span></a><ul class="dropdown-menu"><li><a title="Numerik...-35864" href="https://moodle.uni-weimar.de/course/view.php?id=2669"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Numerik  WiSe2017</span></a></li><li><a title="Analysis...-37402" href="https://moodle.uni-weimar.de/course/view.php?id=3677"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Analysis  SoSe2018</span></a></li><li><a title="Numerik...-39025" href="https://moodle.uni-weimar.de/course/view.php?id=4472"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Numerik  WiSe2018</span></a></li><li><a title="Advanced Human-Computer I...-41877" href="https://moodle.uni-weimar.de/course/view.php?id=7305"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Advanced Human-Computer Interaction: Ubiquitous Computing  SoSe2019</span></a></li><li><a title="Image analysis and object...-41142" href="https://moodle.uni-weimar.de/course/view.php?id=7253"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Image analysis and object recognition  SoSe2019</span></a></li><li><a title="Mobile Information System...-41136" href="https://moodle.uni-weimar.de/course/view.php?id=7719"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Mobile Information Systems  SoSe2019</span></a></li><li><a title="Randomized Algorithms...-40833" href="https://moodle.uni-weimar.de/course/view.php?id=7292"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Randomized Algorithms  SoSe2019</span></a></li><li><a title="Discrete Optimization...-43658" href="https://moodle.uni-weimar.de/course/view.php?id=15242"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Discrete Optimization  WiSe2019</span></a></li><li><a title="Secure Channels...-43713" href="https://moodle.uni-weimar.de/course/view.php?id=16238"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Secure Channels  WiSe2019</span></a></li><li><a title="Introduction to functiona...-43682" href="https://moodle.uni-weimar.de/course/view.php?id=10781"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Introduction to functional programming with Haskell  WiSe2019</span></a></li><li><a title="ProjectsCS4DM WiSe 2019" href="https://moodle.uni-weimar.de/course/view.php?id=16107"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>Projects Computer Science for Digital Media WiSe 2019</span></a></li></ul></li></ul></div></li></ul></div><div id="custom_menu_themecolours" class="custom_menu dropdownmenuscroll"><ul class="nav"><li class="dropdown"><a href="https://moodle.uni-weimar.de/course/view.php?id=27690" class="dropdown-toggle" data-toggle="dropdown" title="Farben"><span aria-hidden="true" class="fa fa-th-large"></span>Farben<span aria-hidden="true" class="fa fa-caret-right"></span></a><div class="dropdown-menu"><ul><li><a title="Standardmäßige Farben" class="default" href="https://moodle.uni-weimar.de/course/view.php?id=27690&amp;essentialcolours=default"><span aria-hidden="true" class="colours-default fa fa-square"></span>Standardmäßige Farben</a></li><li><a title="Blau" class="alternative1" href="https://moodle.uni-weimar.de/course/view.php?id=27690&amp;essentialcolours=alternative1"><span aria-hidden="true" class="colours-alternative1 fa fa-square"></span>Blau</a></li><li><a title="Orange" class="alternative2" href="https://moodle.uni-weimar.de/course/view.php?id=27690&amp;essentialcolours=alternative2"><span aria-hidden="true" class="colours-alternative2 fa fa-square"></span>Orange</a></li><li><a title="Grün" class="alternative3" href="https://moodle.uni-weimar.de/course/view.php?id=27690&amp;essentialcolours=alternative3"><span aria-hidden="true" class="colours-alternative3 fa fa-square"></span>Grün</a></li><li><a title="Dunkelblau" class="alternative4" href="https://moodle.uni-weimar.de/course/view.php?id=27690&amp;essentialcolours=alternative4"><span aria-hidden="true" class="colours-alternative4 fa fa-square"></span>Dunkelblau</a></li></ul></div></li></ul></div><div id="custom_menu" class="custom_menu dropdownsubmenuscroll"><ul class="nav"><li class="dropdown"><a href="#cm_submenu_8" class="dropdown-toggle" data-toggle="dropdown" title="Support">Support<span aria-hidden="true" class="fa fa-caret-right"></span></a><div class="dropdown-menu"><ul><li><a title="Moodle-Lernvideos" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/" target="_blank" "="">Moodle-Lernvideos</a></li><li><a title="Support-Anfrage" href="https://moodle.uni-weimar.de/blocks/ticket/create.php" target="_blank" "="">Support-Anfrage</a></li><li><a title="DFN Webinare mit Pexip" href="https://my.conf.dfn.de/pexip/" target="_blank" "="">DFN Webinare mit Pexip</a></li><li><a title="Lernvideo: DFN Webinare Pexip Streaming" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/#c345535" target="_blank" "="">Lernvideo: DFN Webinare Pexip Streaming</a></li></ul></div></li></ul></div><div id="custom_menu_activitystream" class="custom_menu dropdownmenuscroll"><ul class="nav"><li class="dropdown"><a href="https://moodle.uni-weimar.de/course/view.php?id=27690" class="dropdown-toggle" data-toggle="dropdown" title="Dieser Kurs"><span aria-hidden="true" class="fa fa-book"></span>Dieser Kurs<span aria-hidden="true" class="fa fa-caret-right"></span></a><div class="dropdown-menu"><ul><li><a title="Bewertungen" href="https://moodle.uni-weimar.de/grade/report/index.php?id=27690"><span aria-hidden="true" class="icon fa fa-list-alt"></span>Bewertungen</a></li><li><a href="https://moodle.uni-weimar.de/course/resources.php?id=27690"><img class="icon icon" alt="" aria-hidden="true" src="moodleIntro_files/icon_005.svg">Arbeitsmaterial</a></li><li><a href="https://moodle.uni-weimar.de/mod/assign/index.php?id=27690"><img class="icon icon" alt="" aria-hidden="true" src="moodleIntro_files/icon_004.svg">Aufgaben</a></li><li><a href="https://moodle.uni-weimar.de/mod/questionnaire/index.php?id=27690"><img class="icon icon" alt="" aria-hidden="true" src="moodleIntro_files/icon_003.svg">Befragungen</a></li><li><a href="https://moodle.uni-weimar.de/mod/bigbluebuttonbn/index.php?id=27690"><i class="icon fa icon-bigbluebutton fa-fw icon" aria-hidden="true"></i>BigBlueButton</a></li><li><a href="https://moodle.uni-weimar.de/mod/lti/index.php?id=27690"><img class="icon icon" alt="" aria-hidden="true" src="moodleIntro_files/icon_008.svg">Externe Tools</a></li><li><a href="https://moodle.uni-weimar.de/mod/forum/index.php?id=27690"><img class="icon icon" alt="" aria-hidden="true" src="moodleIntro_files/icon.svg">Foren</a></li><li><a href="https://moodle.uni-weimar.de/mod/choicegroup/index.php?id=27690"><img class="icon icon" alt="" aria-hidden="true" src="moodleIntro_files/icon_006.svg">Gruppenwahlen</a></li></ul></div></li></ul></div>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="page-header" class="clearfix nologo" style="margin-top: 40.5px;">
+        <div class="container-fluid">
+            <div class="row-fluid">
+<div class="pull-left"><a class="textlogo" href="https://moodle.uni-weimar.de/"><div class="titlearea"><h1 id="title">Lernplattform Bauhaus-Universität Weimar</h1></div></a>                </div>
+                            </div>
+        </div>
+    </div>
+</header>
+
+<div id="page" class="container-fluid">
+    <div id="page-top-header" class="clearfix"><div id="page-navbar" class="clearfix row-fluid"><div class="breadcrumb-nav span9"><span class="accesshide" id="navbar-label">Seitenpfad</span><nav aria-labelledby="navbar-label"><ul class="breadcrumb style1"><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://moodle.uni-weimar.de/my/"><span itemprop="title">Dashboard</span></a></span></li><li><span tabindex="0">Meine Kurse</span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" title="Introduction to Machine Learning  WiSe2020" aria-current="page" href="https://moodle.uni-weimar.de/course/view.php?id=27690"><span itemprop="title">Introduction to Machine L...-47657</span></a></span></li></ul></nav></div><nav class="breadcrumb-button span3"></nav></div></div>    <!-- Start Main Regions -->
+    <div id="page-content" class="row-fluid">
+        <div id="main-and-pre" class="span12">
+            <div class="row-fluid" id="yui_3_17_2_1_1605372564823_248">
+                <div id="content" class="span9"><section id="region-main"><div id="fullscreenpadding"><div id="fullscreen" title="Vollbildmodus umschalten. (Strg+Alt+b)" class="fullscreen"></div></div><div class="coursetitle"><div class="page-context-header"><div class="page-header-headings"><h1>Introduction to Machine Learning  WiSe2020</h1></div></div></div><div class="bor"></div><span class="notifications" id="user-notifications"></span><div role="main" id="yui_3_17_2_1_1605372564823_247"><span id="maincontent"></span><div class="course-content" id="yui_3_17_2_1_1605372564823_246"><h2 class="accesshide">Themen dieses Kurses</h2><ul class="topics" id="yui_3_17_2_1_1605372564823_245"><li id="section-0" class="section main clearfix" role="region" aria-label="Allgemeines"><span class="hidden sectionname">Allgemeines</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" aria-hidden="true" src="moodleIntro_files/spacer.gif" width="1" height="1"></div><div class="content" id="yui_3_17_2_1_1605372564823_251"><h3 class="sectionname accesshide"><span>Allgemeines</span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text" id="yui_3_17_2_1_1605372564823_250"><li class="activity label modtype_label " id="module-172884"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><p></p><p>Welcome to the course on Introduction to Machine Learning!</p>
+<p>By the end of this course you will be able to understand and explain 
+the concepts of machine learning, as well as understand the formalized 
+concepts and methods of this vast field. You will also be able to 
+implement these concepts and methods in the form of algorithms. Through 
+active participation in this module, you will be best placed to sensibly
+ select, adapt, and apply the methods you learned.</p><div>Please refer to the <a href="https://ml.weimar.webis.de/" target="_blank">course homepage</a> for up-to-date information.</div><p></p></div></div></div></div></div></div></li><li class="activity url modtype_url " id="module-178537"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/url/view.php?id=178537"><img src="moodleIntro_files/icon_002.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Zoom Virtual Classroom (Leipzig)<span class="accesshide "> Link/URL</span></span></a></div></div></div></div></li><li class="activity bigbluebuttonbn modtype_bigbluebuttonbn " id="module-178351"><div id="yui_3_17_2_1_1605372564823_249"><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/bigbluebuttonbn/view.php?id=178351"><img src="moodleIntro_files/icon_007.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Lab Group Rooms<span class="accesshide "> BigBlueButton</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p>Individual video chat rooms for every lab working group.<br></p></div></div></div></div></div></div></li><li class="activity lti modtype_lti " id="module-172482"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open('https://moodle.uni-weimar.de/mod/lti/launch.php?id=172482', 'lti-172482'); return false;" href="https://moodle.uni-weimar.de/mod/lti/view.php?id=172482"><img src="moodleIntro_files/Jupyter_logo.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Jupyter Notebook Server<span class="accesshide "> Externes Tool</span></span></a></div></div></div></div></li><li class="activity url modtype_url " id="module-178361"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open('https://moodle.uni-weimar.de/mod/url/view.php?id=178361&amp;redirect=1'); return false;" href="https://moodle.uni-weimar.de/mod/url/view.php?id=178361"><img src="moodleIntro_files/icon_002.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Social Lobby<span class="accesshide "> Link/URL</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p>An optional social lobby on the&nbsp;GDPR-compliant Wonder.me (Yotribe GmbH) platform (<a href="https://www.wonder.me/privacy-policy" target="_blank">https://www.wonder.me/privacy-policy</a>)<br></p></div></div></div></div></div></div></li><li class="activity forum modtype_forum " id="module-167993"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/forum/view.php?id=167993"><img src="moodleIntro_files/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Announcements<span class="accesshide "> Forum</span></span></a></div></div></div></div></li><li class="activity forum modtype_forum " id="module-178544"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/forum/view.php?id=178544"><img src="moodleIntro_files/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Questions<span class="accesshide "> Forum</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p>Use this forum to ask questions about the course content. Include slide numbers, if applicable.<br></p></div></div></div></div></div></div></li></ul></div></li><li id="section-1" class="section main clearfix" role="region" aria-label="Session Recordings"><span class="hidden sectionname">Session Recordings</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" aria-hidden="true" src="moodleIntro_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span>Session Recordings</span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity url modtype_url " id="module-180562"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open('https://moodle.uni-weimar.de/mod/url/view.php?id=180562&amp;redirect=1'); return false;" href="https://moodle.uni-weimar.de/mod/url/view.php?id=180562"><img src="moodleIntro_files/icon_002.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Playlist with session recordings<span class="accesshide "> Link/URL</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p>Session recordings will be added here.<br></p></div></div></div></div></div></div></li></ul></div></li><li id="section-2" class="section main clearfix" role="region" aria-label="Lecturenotes"><span class="hidden sectionname">Lecturenotes</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" aria-hidden="true" src="moodleIntro_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span>Lecturenotes</span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity label modtype_label " id="module-178350"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><p>The lecturenotes slides can be accessed from the <a href="https://www.uni-weimar.de/de/medien/professuren/medieninformatik/webis/teaching/ws-202021/machine-learning/#c374687" target="_blank">course homepage</a>.</p></div></div></div></div></div></div></li></ul></div></li><li id="section-3" class="section main clearfix" role="region" aria-label="Literature"><span class="hidden sectionname">Literature</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" aria-hidden="true" src="moodleIntro_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span>Literature</span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity label modtype_label " id="module-175722"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><div>
+  <div><div>
+  <div><h5><span style="font-weight: normal;">Mitchell, Tom M. </span><i><span style="font-weight: normal;">Machine Learning</span></i><span style="font-weight: normal;">. McGraw-Hill Series in Computer Science. New York: McGraw-Hill, 1997.</span></h5></div>
+  <span title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=urn%3Aisbn%3A978-0-07-042807-2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Machine%20Learning&amp;rft.place=New%20York&amp;rft.publisher=McGraw-Hill&amp;rft.series=McGraw-Hill%20series%20in%20computer%20science&amp;rft.aufirst=Tom%20M.&amp;rft.aulast=Mitchell&amp;rft.au=Tom%20M.%20Mitchell&amp;rft.date=1997&amp;rft.tpages=414&amp;rft.isbn=978-0-07-042807-2"></span>
+</div></div>
+  <span title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=urn%3Aisbn%3A978-0-07-042807-2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Machine%20Learning&amp;rft.place=New%20York&amp;rft.publisher=McGraw-Hill&amp;rft.series=McGraw-Hill%20series%20in%20computer%20science&amp;rft.aufirst=Tom%20M.&amp;rft.aulast=Mitchell&amp;rft.au=Tom%20M.%20Mitchell&amp;rft.date=1997&amp;rft.tpages=414&amp;rft.isbn=978-0-07-042807-2"></span>
+</div></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-175723"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/resource/view.php?id=175723"><img src="moodleIntro_files/pdf-24.png" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename"> Pages 2-5. Introduction, Well-posed Learning Problems.<span class="accesshide "> Datei</span></span></a></div></div></div></div></li></ul></div></li><li id="section-4" class="section main clearfix" role="region" aria-label="Lab Class Preparation"><span class="hidden sectionname">Lab Class Preparation</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" aria-hidden="true" src="moodleIntro_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span>Lab Class Preparation</span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity questionnaire modtype_questionnaire " id="module-172483"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/questionnaire/view.php?id=172483"><img src="moodleIntro_files/icon_003.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Pre-course Survey<span class="accesshide "> Befragung</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow">Please fill in these basic details in order to participate in the course and labs.<br></div></div></div></div></div></div></li><li class="activity forum modtype_forum " id="module-172872"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/forum/view.php?id=172872"><img src="moodleIntro_files/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Group Finding Forum</span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p>Use
+ this discussion forum to introduce yourselves and to find lab partners 
+to form groups with. Up to three people are allowed per group.<br></p></div></div></div></div></div></div></li><li class="activity choicegroup modtype_choicegroup " id="module-172484"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/choicegroup/view.php?id=172484"><img src="moodleIntro_files/icon_006.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Lab Class Group Selection<span class="accesshide "> Gruppenwahl</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p>After you have found your lab partners, make your group selection here. <br></p><p>If
+ you get 4.5 ECTS for this class, choose a group starting with "W4.5," 
+if you get 6 ECTS, choose one starting with "W6." Mixed groups with 
+students getting different amounts of ETCS are not allowed.<br></p></div></div></div></div></div></div></li></ul></div></li><li id="section-6" class="section main clearfix current" role="region" aria-label="Exercise Sheet 1"><span class="hidden sectionname">Exercise Sheet 1</span><div class="left side"><span class="accesshide ">Dieses Thema</span></div><div class="right side"><img class="icon spacer" alt="" aria-hidden="true" src="moodleIntro_files/spacer.gif" width="1" height="1"></div><div class="content" id="yui_3_17_2_1_1605372564823_244"><h3 class="sectionname"><span>Exercise Sheet 1</span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text" id="yui_3_17_2_1_1605372564823_243"><li class="activity label modtype_label " id="module-178341"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><p>The deadline for submitting this exercise worksheet is <b>Monday, Nov. 16, 23:59 CET</b>.&nbsp; Depending on your ECTS requirements, the following exercises have to be submitted:</p><table>
+<tbody>
+<tr>
+<td><b>4.5 ECTS</b><br></td>
+<td>Exercises 2, 3, and 6<br></td>
+</tr>
+<tr>
+<td><b>6 ECTS</b><br></td>
+<td>Exercises 2, 3, 4, and 6<br></td>
+</tr>
+</tbody>
+</table>
+<div><br></div><div>Each group should submit a single PDF with the 
+answers for all theory questions (1–5), one or more CSV files for 
+exercise 6a, and one HTML file for exercise 6b.</div><div><br></div><div>The annotation tool for exercise 6a can be found [<a href="https://files.webis.de/teaching/machine-learning-ws20/website-annotation.html" target="_blank">here</a>].<br></div><p></p></div></div></div></div></div></div></li><li class="activity forum modtype_forum " id="module-172445"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/forum/view.php?id=172445"><img src="moodleIntro_files/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Discussion Forum — Exercise 1</span></a></div></div></div></div></li><li class="activity url modtype_url " id="module-172446"><div id="yui_3_17_2_1_1605372564823_242"><div class="mod-indent-outer" id="yui_3_17_2_1_1605372564823_241"><div class="mod-indent"></div><div id="yui_3_17_2_1_1605372564823_240"><div class="activityinstance" id="yui_3_17_2_1_1605372564823_239"><a class="" onclick="window.open('https://moodle.uni-weimar.de/mod/url/view.php?id=172446&amp;redirect=1'); return false;" href="https://moodle.uni-weimar.de/mod/url/view.php?id=172446" id="yui_3_17_2_1_1605372564823_238"><img src="moodleIntro_files/pdf-24.png" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename" id="yui_3_17_2_1_1605372564823_237">Worksheet<span class="accesshide "> Link/URL</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-178344"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/assign/view.php?id=178344"><img src="moodleIntro_files/icon_004.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Submission for Exercises 1–5<span class="accesshide "> Aufgabe</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-178342"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/assign/view.php?id=178342"><img src="moodleIntro_files/icon_004.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Submission for Exercise 6a<span class="accesshide "> Aufgabe</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-178343"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.uni-weimar.de/mod/assign/view.php?id=178343"><img src="moodleIntro_files/icon_004.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Submission for Exercise 6b<span class="accesshide "> Aufgabe</span></span></a></div></div></div></div></li></ul></div></li></ul></div></div><div id="activitynavigation"></div></section></div><aside id="block-region-side-pre" class="span3 block-region" data-blockregion="side-pre" data-droptarget="1"><a class="skip skip-block" id="fsb-2" href="#sb-2">Kursteilnehmer überspringen</a><div id="inst78538" class="block_courseusers block" role="navigation" data-block="courseusers" data-instanceid="78538" aria-labelledby="instance-78538-header" data-dockable="1"><div class="header"><div class="title" id="yui_3_17_2_1_1605372564823_73"><div class="block_action"><i class="block-hider-hide icon fa fa-minus-square-o fa-fw" aria-hidden="true" aria-label="Block Kursteilnehmer verbergen" tabindex="0" title="Block Kursteilnehmer verbergen"></i><i class="block-hider-show icon fa fa-plus-square-o fa-fw" aria-hidden="true" aria-label="Block Kursteilnehmer anzeigen" tabindex="0" title="Block Kursteilnehmer anzeigen"></i><input type="image" class="moveto customcommand requiresjs" alt="Block ins Dock bewegen" title="Block Kursteilnehmer ins Dock" src="moodleIntro_files/block_to_dock.svg"></div><span aria-hidden="true" class="fa fa-navicon"></span><h2 id="instance-78538-header">Kursteilnehmer</h2></div></div><div class="content"><div id="courseusersnav" class="box block_tree_box"><ul class="block_tree list" role="group"><li class="type_setting depth_1 item_with_icon" tabindex="-1" aria-labelledby="label_1_1"><p class="tree_item hasicon tree_item leaf" role="treeitem"><a href="https://moodle.uni-weimar.de/user/index.php?id=27690&amp;roleid=5"><i class="icon fa fa-users fa-fw navicon" aria-hidden="true"></i>Teilnehmerliste</a></p></li>
+<li class="type_setting depth_1 item_with_icon" tabindex="-1" aria-labelledby="label_1_2"><p class="tree_item hasicon tree_item leaf" role="treeitem"><a href="https://moodle.uni-weimar.de/user/index.php?id=27690&amp;roleid=3"><i class="icon fa fa-users fa-fw navicon" aria-hidden="true"></i>Trainerliste</a></p></li>
+<li class="type_setting depth_1 item_with_icon" tabindex="-1" aria-labelledby="label_1_3"><p class="tree_item hasicon tree_item leaf" role="treeitem"><a href="https://moodle.uni-weimar.de/grade/report/index.php?id=27690"><i class="icon fa fa-table fa-fw navicon" aria-hidden="true"></i>Bewertungen</a></p></li></ul></div></div></div><span class="skip-block-to" id="sb-2"></span><a class="skip skip-block" id="fsb-3" href="#sb-3">Suche überspringen</a><div id="inst78539" class="block_search block" role="complementary" data-block="search" data-instanceid="78539" aria-labelledby="instance-78539-header" data-dockable="1"><div class="header"><div class="title" id="yui_3_17_2_1_1605372564823_89"><div class="block_action"><i class="block-hider-hide icon fa fa-minus-square-o fa-fw" aria-hidden="true" aria-label="Block Suche verbergen" tabindex="0" title="Block Suche verbergen"></i><i class="block-hider-show icon fa fa-plus-square-o fa-fw" aria-hidden="true" aria-label="Block Suche anzeigen" tabindex="0" title="Block Suche anzeigen"></i><input type="image" class="moveto customcommand requiresjs" alt="Block ins Dock bewegen" title="Block Suche ins Dock" src="moodleIntro_files/block_to_dock.svg"></div><span aria-hidden="true" class="fa fa-navicon"></span><h2 id="instance-78539-header">Suche</h2></div></div><div class="content"><form action="https://moodle.uni-weimar.de/blocks/search/" method="get" class="searchBlockForm"><input type="text" placeholder="Suche nur in Introduction to Machine Learning  WiSe2020" class="searchBlockInput" name="q"><button class="searchButton"><i class="fa fa-search"></i> Suche</button><input type="hidden" name="courseID" value="27690"></form></div></div><span class="skip-block-to" id="sb-3"></span><a class="skip skip-block" id="fsb-4" href="#sb-4">Aktuelle Termine überspringen</a><div id="inst78540" class="block_calendar_upcoming block" role="complementary" data-block="calendar_upcoming" data-instanceid="78540" aria-labelledby="instance-78540-header" data-dockable="1"><div class="header"><div class="title" id="yui_3_17_2_1_1605372564823_105"><div class="block_action"><i class="block-hider-hide icon fa fa-minus-square-o fa-fw" aria-hidden="true" aria-label="Block Aktuelle Termine verbergen" tabindex="0" title="Block Aktuelle Termine verbergen"></i><i class="block-hider-show icon fa fa-plus-square-o fa-fw" aria-hidden="true" aria-label="Block Aktuelle Termine anzeigen" tabindex="0" title="Block Aktuelle Termine anzeigen"></i><input type="image" class="moveto customcommand requiresjs" alt="Block ins Dock bewegen" title="Block Aktuelle Termine ins Dock" src="moodleIntro_files/block_to_dock.svg"></div><span aria-hidden="true" class="fa fa-calendar"></span><h2 id="instance-78540-header">Aktuelle Termine</h2></div></div><div class="content"><div id="calendar-upcoming-block-5fb00a947983e5fb00a94632484" data-template="core_calendar/upcoming_mini">
+    <div class="card-text content calendarwrapper" id="month-upcoming-mini-5fb00a947983e5fb00a94632484" data-context-id="291659" data-courseid="27690" data-categoryid="9817">
+        <span class="overlay-icon-container hidden" data-region="overlay-icon-container">
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Laden ..." aria-label="Laden ..."></i></span>
+        </span>
+            <div class="event" data-eventtype-course="1" data-region="event-item">
+                <span><img class="icon " alt="Aktivitätstermin" title="Aktivitätstermin" src="moodleIntro_files/icon_004.svg"></span>
+                <a data-type="event" data-action="view-event" data-event-id="122697" href="https://moodle.uni-weimar.de/calendar/view.php?view=day&amp;course=27690&amp;time=1605567540#event_122697">Submission for Exercise 6a is due</a>
+                <div class="date"><a href="https://moodle.uni-weimar.de/calendar/view.php?view=day&amp;time=1605567540">Montag, 16. November</a>, 23:59</div>
+                <hr>
+            </div>
+            <div class="event" data-eventtype-course="1" data-region="event-item">
+                <span><img class="icon " alt="Aktivitätstermin" title="Aktivitätstermin" src="moodleIntro_files/icon_004.svg"></span>
+                <a data-type="event" data-action="view-event" data-event-id="122698" href="https://moodle.uni-weimar.de/calendar/view.php?view=day&amp;course=27690&amp;time=1605567540#event_122698">Submission for Exercise 6b is due</a>
+                <div class="date"><a href="https://moodle.uni-weimar.de/calendar/view.php?view=day&amp;time=1605567540">Montag, 16. November</a>, 23:59</div>
+                <hr>
+            </div>
+            <div class="event" data-eventtype-course="1" data-region="event-item">
+                <span><img class="icon " alt="Aktivitätstermin" title="Aktivitätstermin" src="moodleIntro_files/icon_004.svg"></span>
+                <a data-type="event" data-action="view-event" data-event-id="122699" href="https://moodle.uni-weimar.de/calendar/view.php?view=day&amp;course=27690&amp;time=1605567540#event_122699">Submission for Exercises 1–5 is due</a>
+                <div class="date"><a href="https://moodle.uni-weimar.de/calendar/view.php?view=day&amp;time=1605567540">Montag, 16. November</a>, 23:59</div>
+                <hr>
+            </div>
+    </div>
+</div><div class="footer"><div class="gotocal"><a href="https://moodle.uni-weimar.de/calendar/view.php?view=upcoming&amp;course=27690">Zum Kalender ...</a></div></div></div></div><span class="skip-block-to" id="sb-4"></span><a class="skip skip-block" id="fsb-5" href="#sb-5">Pinnwand überspringen</a><div id="inst78541" class="block_news_items block" role="complementary" data-block="news_items" data-instanceid="78541" aria-labelledby="instance-78541-header" data-dockable="1"><div class="header"><div class="title" id="yui_3_17_2_1_1605372564823_121"><div class="block_action"><i class="block-hider-hide icon fa fa-minus-square-o fa-fw" aria-hidden="true" aria-label="Block Pinnwand verbergen" tabindex="0" title="Block Pinnwand verbergen"></i><i class="block-hider-show icon fa fa-plus-square-o fa-fw" aria-hidden="true" aria-label="Block Pinnwand anzeigen" tabindex="0" title="Block Pinnwand anzeigen"></i><input type="image" class="moveto customcommand requiresjs" alt="Block ins Dock bewegen" title="Block Pinnwand ins Dock" src="moodleIntro_files/block_to_dock.svg"></div><span aria-hidden="true" class="fa fa-bullhorn"></span><h2 id="instance-78541-header">Pinnwand</h2></div></div><div class="content">
+<ul class="unlist">
+<li class="post"><div class="head clearfix"><div class="date">5. Nov, 10:00</div><div class="name">Michael Völske</div></div><div class="info"><a href="https://moodle.uni-weimar.de/mod/forum/discuss.php?d=23004">Alternative lecture room due to technical difficulties</a></div></li>
+</ul>
+<div class="footer"><a href="https://moodle.uni-weimar.de/mod/forum/view.php?f=15110">Ältere Themen</a> ...</div></div></div><span class="skip-block-to" id="sb-5"></span><a class="skip skip-block" id="fsb-6" href="#sb-6">Neue Aktivitäten überspringen</a><div id="inst78542" class="block_recent_activity block" role="complementary" data-block="recent_activity" data-instanceid="78542" aria-labelledby="instance-78542-header" data-dockable="1"><div class="header"><div class="title" id="yui_3_17_2_1_1605372564823_137"><div class="block_action"><i class="block-hider-hide icon fa fa-minus-square-o fa-fw" aria-hidden="true" aria-label="Block Neue Aktivitäten verbergen" tabindex="0" title="Block Neue Aktivitäten verbergen"></i><i class="block-hider-show icon fa fa-plus-square-o fa-fw" aria-hidden="true" aria-label="Block Neue Aktivitäten anzeigen" tabindex="0" title="Block Neue Aktivitäten anzeigen"></i><input type="image" class="moveto customcommand requiresjs" alt="Block ins Dock bewegen" title="Block Neue Aktivitäten ins Dock" src="moodleIntro_files/block_to_dock.svg"></div><span aria-hidden="true" class="fa fa-clock-o"></span><h2 id="instance-78542-header">Neue Aktivitäten</h2></div></div><div class="content"><div class="activityhead">Aktivität seit Freitag, 13. November 2020, 15:21</div><div class="activityhead"><a href="https://moodle.uni-weimar.de/course/recent.php?id=27690">Alle Aktivitäten der letzten Zeit</a></div><h3>Neue Forumsbeiträge:</h3><ul class="unlist"><li><div class="head"><div class="date">13. Nov, 16:42</div><div class="name">Asham Husain</div></div><div class="info bold"><a href="https://moodle.uni-weimar.de/mod/forum/discuss.php?d=23701">HTML from the images</a></div></li><li><div class="head"><div class="date">13. Nov, 17:36</div><div class="name">Janek Bevendorff</div></div><div class="info"><a href="https://moodle.uni-weimar.de/mod/forum/discuss.php?d=23701&amp;parent=36763#p36766">Re: HTML from the images</a></div></li><li><div class="head"><div class="date">14. Nov, 12:33</div><div class="name">Jitendra Tiwari</div></div><div class="info"><a href="https://moodle.uni-weimar.de/mod/forum/discuss.php?d=22854&amp;parent=35639#p36806">Re: Looking for Lab Partner with 6 ECTS(W6-25)</a></div></li></ul></div></div><span class="skip-block-to" id="sb-6"></span><a class="skip skip-block" id="fsb-7" href="#sb-7">Personen überspringen</a><div id="inst84304" class="block_participants block list_block" role="complementary" data-block="participants" data-instanceid="84304" aria-labelledby="instance-84304-header" data-dockable="1"><div class="header"><div class="title" id="yui_3_17_2_1_1605372564823_153"><div class="block_action"><i class="block-hider-hide icon fa fa-minus-square-o fa-fw" aria-hidden="true" aria-label="Block Personen verbergen" tabindex="0" title="Block Personen verbergen"></i><i class="block-hider-show icon fa fa-plus-square-o fa-fw" aria-hidden="true" aria-label="Block Personen anzeigen" tabindex="0" title="Block Personen anzeigen"></i><input type="image" class="moveto customcommand requiresjs" alt="Block ins Dock bewegen" title="Block Personen ins Dock" src="moodleIntro_files/block_to_dock.svg"></div><span aria-hidden="true" class="fa fa-users"></span><h2 id="instance-84304-header">Personen</h2></div></div><div class="content"><ul class="unlist"><li class="r0"><div class="column c1"><a title="Liste aller Nutzer/innen" href="https://moodle.uni-weimar.de/user/index.php?contextid=291659"><i class="icon fa fa-users fa-fw " aria-hidden="true"></i>Teilnehmer/innen</a></div></li></ul></div></div><span class="skip-block-to" id="sb-7"></span><a class="skip skip-block" id="fsb-8" href="#sb-8">Personen online überspringen</a><div id="inst84306" class="block_online_users block" role="complementary" data-block="online_users" data-instanceid="84306" aria-labelledby="instance-84306-header" data-dockable="1"><div class="header"><div class="title" id="yui_3_17_2_1_1605372564823_169"><div class="block_action"><i class="block-hider-hide icon fa fa-minus-square-o fa-fw" aria-hidden="true" aria-label="Block Personen online verbergen" tabindex="0" title="Block Personen online verbergen"></i><i class="block-hider-show icon fa fa-plus-square-o fa-fw" aria-hidden="true" aria-label="Block Personen online anzeigen" tabindex="0" title="Block Personen online anzeigen"></i><input type="image" class="moveto customcommand requiresjs" alt="Block ins Dock bewegen" title="Block Personen online ins Dock" src="moodleIntro_files/block_to_dock.svg"></div><span aria-hidden="true" class="fa fa-users"></span><h2 id="instance-84306-header">Personen online</h2></div></div><div class="content"><div class="info">1 Person online (in den letzten 5 Minuten)</div><ul class="list">
+<li class="listentry"><div class="user"><a href="https://moodle.uni-weimar.de/user/view.php?id=6594&amp;course=27690" title="jetzt"><img src="moodleIntro_files/f2.png" class="userpicture defaultuserpic" width="16" height="16">Hans Lienhop</a></div></li>
+</ul><div class="clearer"><!-- --></div></div></div><span class="skip-block-to" id="sb-8"></span><a class="skip skip-block" id="fsb-9" href="#sb-9">Einstellungen überspringen</a><div id="inst5" class="block_settings block" role="navigation" data-block="settings" data-instanceid="5" aria-labelledby="instance-5-header" data-dockable="1"><div class="header"><div class="title" id="yui_3_17_2_1_1605372564823_185"><div class="block_action"><i class="block-hider-hide icon fa fa-minus-square-o fa-fw" aria-hidden="true" aria-label="Block Einstellungen verbergen" tabindex="0" title="Block Einstellungen verbergen"></i><i class="block-hider-show icon fa fa-plus-square-o fa-fw" aria-hidden="true" aria-label="Block Einstellungen anzeigen" tabindex="0" title="Block Einstellungen anzeigen"></i><input type="image" class="moveto customcommand requiresjs" alt="Block ins Dock bewegen" title="Block Einstellungen ins Dock" src="moodleIntro_files/block_to_dock.svg"></div><span aria-hidden="true" class="fa fa-cogs"></span><h2 id="instance-5-header">Einstellungen</h2></div></div><div class="content"><div id="settingsnav" class="box block_tree_box"><ul class="block_tree list" role="tree" data-ajax-loader="block_navigation/site_admin_loader"><li class="type_course depth_1 contains_branch" tabindex="-1" aria-labelledby="label_1_1"><p class="tree_item root_node tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random5fb00a94632485_group" tabindex="0" aria-selected="true"><span tabindex="-1">Kurs-Administration</span></p><ul id="random5fb00a94632485_group" role="group" tabindex="-1"><li class="type_setting depth_2 item_with_icon" tabindex="-1" aria-labelledby="label_2_1"><p class="tree_item hasicon tree_item leaf" role="treeitem" tabindex="-1" aria-selected="false"><a href="https://moodle.uni-weimar.de/enrol/apply/unenrolself.php?enrolid=58013" tabindex="-1"><i class="icon fa fa-user fa-fw navicon" aria-hidden="true" tabindex="-1"></i>Ausschreiben aus 'Introduction to Machine L...-47657'</a></p></li></ul></li></ul></div></div></div><span class="skip-block-to" id="sb-9"></span></aside>            </div>
+                    </div>
+    </div>
+    <!-- End Main Regions -->
+</div>
+
+    <footer role="contentinfo" id="page-footer">
+        <div class="container-fluid">
+                        <div class="row-fluid footerblocks">
+                <div class="footerblock span4">
+                                    </div>
+                <div class="footerblock span4">
+                                    </div>
+                <div class="footerblock span4">
+                                    </div>
+            </div>
+            <div class="row-fluid">
+                <div class="tool_usertours-resettourcontainer span12"></div>
+            </div>
+            <div class="footerlinks row-fluid">
+                <hr>
+                <span class="helplink"></span>
+                                <div class="footnote span12"><div style="text-align: center;"><br><a target="_blank" href="https://www.uni-weimar.de/de/fs/impressum/">Impressum der Bauhaus-Universität Weimar</a> | <a target="_blank" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/">Digital Studieren</a> | <a target="_blank" href="https://www.uni-weimar.de/de/universitaet/studium/digital-studieren/moodle-lernvideos/">Lernvideos zu Moodle</a> | <a target="_blank" title="Datenschutzerklärung" href="https://moodle.uni-weimar.de/admin/tool/policy/view.php?policyid=1&amp;versionid=1"> Datenschutzerklärung</a><br>&nbsp;<br></div>
+
+<div style="text-align: center;"><a target="_blank" href="https://www.moodle.org/"><img src="moodleIntro_files/moodle-logo.png" alt="We use Moodle" title="We use Moodle" style="vertical-align:text-bottom; margin: 0 .5em;" class="img-responsive" width="157" height="40"></a>  
+
+<a href="https://www.redmineup.com/?campaign=nonprofit" target="_blank" style="cursor:pointer; display:inline-block;"> <img alt="We use RedmineUP plugins" title="We use RedmineUP plugins" style="width:160px;heigh:40px;vertical-align:text-bottom; margin: 0 .5em; padding-left:10px;" src="moodleIntro_files/gray_200_50.png"> </a><br></div><br></div>            </div>
+            <div class="footerperformance row-fluid">
+                <div class="policiesfooter"><a href="https://moodle.uni-weimar.de/admin/tool/policy/viewall.php?returnurl=https%3A%2F%2Fmoodle.uni-weimar.de%2Fcourse%2Fview.php%3Fid%3D27690">Datenschutzinformation</a></div>            </div>
+        </div>
+    </footer>
+    <a href="#top" class="back-to-top" aria-label="Zum Seitenanfang" style="display: none;">
+        <span aria-hidden="true" class="fa fa-angle-up "></span></a>
+<script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://moodle.uni-weimar.de/lib/requirejs.php/1604064094/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://moodle.uni-weimar.de/lib/javascript.php/1604064094/lib/jquery/jquery-3.2.1.min',
+        jqueryui: 'https://moodle.uni-weimar.de/lib/javascript.php/1604064094/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://moodle.uni-weimar.de/lib/javascript.php/1604064094/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="moodleIntro_files/require.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.util.js_pending("core/first");require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://moodle.uni-weimar.de/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("de",{
+ "Play": "Wiedergabe",
+ "Pause": "Pause",
+ "Replay": "Erneut abspielen",
+ "Current Time": "Aktueller Zeitpunkt",
+ "Duration Time": "Dauer",
+ "Remaining Time": "Verbleibende Zeit",
+ "Stream Type": "Streamtyp",
+ "LIVE": "LIVE",
+ "Loaded": "Geladen",
+ "Progress": "Status",
+ "Fullscreen": "Vollbild",
+ "Non-Fullscreen": "Kein Vollbild",
+ "Mute": "Ton aus",
+ "Unmute": "Ton ein",
+ "Playback Rate": "Wiedergabegeschwindigkeit",
+ "Subtitles": "Untertitel",
+ "subtitles off": "Untertitel aus",
+ "Captions": "Untertitel",
+ "captions off": "Untertitel aus",
+ "Chapters": "Kapitel",
+ "You aborted the media playback": "Sie haben die Videowiedergabe abgebrochen.",
+ "A network error caused the media download to fail part-way.": "Der Videodownload ist aufgrund eines Netzwerkfehlers fehlgeschlagen.",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "Das Video konnte nicht geladen werden, da entweder ein Server- oder Netzwerkfehler auftrat oder das Format nicht unterstützt wird.",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "Die Videowiedergabe wurde entweder wegen eines Problems mit einem beschädigten Video oder wegen verwendeten Funktionen, die vom Browser nicht unterstützt werden, abgebrochen.",
+ "No compatible source was found for this media.": "Für dieses Video wurde keine kompatible Quelle gefunden.",
+ "Play Video": "Video abspielen",
+ "Close": "Schließen",
+ "Modal Window": "Modales Fenster",
+ "This is a modal window": "Dies ist ein modales Fenster",
+ "This modal can be closed by pressing the Escape key or activating the close button.": "Durch Drücken der Esc-Taste bzw. Betätigung der Schaltfläche \"Schließen\" wird dieses modale Fenster geschlossen.",
+ ", opens captions settings dialog": ", öffnet Einstellungen für Untertitel",
+ ", opens subtitles settings dialog": ", öffnet Einstellungen für Untertitel",
+ ", selected": ", ausgewählt",
+ "captions settings": "Untertiteleinstellungen",
+ "subtitles settings": "Untertiteleinstellungen",
+ "descriptions settings": "Einstellungen für Beschreibungen",
+ "Close Modal Dialog": "Modales Fenster schließen",
+ "Descriptions": "Beschreibungen",
+ "descriptions off": "Beschreibungen aus",
+ "The media is encrypted and we do not have the keys to decrypt it.": "Die Entschlüsselungsschlüssel für den verschlüsselten Medieninhalt sind nicht verfügbar.",
+ ", opens descriptions settings dialog": ", öffnet Einstellungen für Beschreibungen",
+ "Audio Track": "Tonspur",
+ "Text": "Schrift",
+ "White": "Weiß",
+ "Black": "Schwarz",
+ "Red": "Rot",
+ "Green": "Grün",
+ "Blue": "Blau",
+ "Yellow": "Gelb",
+ "Magenta": "Magenta",
+ "Cyan": "Türkis",
+ "Background": "Hintergrund",
+ "Window": "Fenster",
+ "Transparent": "Durchsichtig",
+ "Semi-Transparent": "Halbdurchsichtig",
+ "Opaque": "Undurchsictig",
+ "Font Size": "Schriftgröße",
+ "Text Edge Style": "Textkantenstil",
+ "None": "Kein",
+ "Raised": "Erhoben",
+ "Depressed": "Gedrückt",
+ "Uniform": "Uniform",
+ "Dropshadow": "Schlagschatten",
+ "Font Family": "Schristfamilie",
+ "Proportional Sans-Serif": "Proportionale Sans-Serif",
+ "Monospace Sans-Serif": "Monospace Sans-Serif",
+ "Proportional Serif": "Proportionale Serif",
+ "Monospace Serif": "Monospace Serif",
+ "Casual": "Zwanglos",
+ "Script": "Schreibeschrift",
+ "Small Caps": "Small-Caps",
+ "Reset": "Zurücksetzen",
+ "restore all settings to the default values": "Alle Einstellungen auf die Standardwerte zurücksetzen",
+ "Done": "Fertig",
+ "Caption Settings Dialog": "Einstellungsdialog für Untertitel",
+ "Beginning of dialog window. Escape will cancel and close the window.": "Anfang des Dialogfensters. Esc bricht ab und schließt das Fenster.",
+ "End of dialog window.": "Ende des Dialogfensters.",
+ "Audio Player": "Audio-Player",
+ "Video Player": "Video-Player",
+ "Progress Bar": "Forschrittsbalken",
+ "progress bar timing: currentTime={1} duration={2}": "{1} von {2}",
+ "Volume Level": "Lautstärkestufe"
+});
+
+    });
+});;
+M.util.js_pending('theme_essential/header');
+require(['theme_essential/header'], function(amd) {
+    amd.init();
+    M.util.js_complete('theme_essential/header');
+});;
+M.util.js_pending('theme_essential/footer');
+require(['theme_essential/footer'], function(amd) {
+    amd.init();
+    M.util.js_complete('theme_essential/footer');
+});;
+M.util.js_pending('theme_essential/navbar');
+require(['theme_essential/navbar'], function(amd) {
+    amd.init({"oldnavbar":false});
+    M.util.js_complete('theme_essential/navbar');
+});;
+M.util.js_pending('theme_essential/course_navigation');
+require(['theme_essential/course_navigation'], function(amd) {
+    amd.init();
+    M.util.js_complete('theme_essential/course_navigation');
+});;
+M.util.js_pending('theme_essential/fitvids');
+require(['theme_essential/fitvids'], function(amd) {
+    amd.init();
+    M.util.js_complete('theme_essential/fitvids');
+});;
+M.util.js_pending('theme_essential/coloursswitcher');
+require(['theme_essential/coloursswitcher'], function(amd) {
+    amd.init({"div":"#custom_menu_themecolours .dropdown-menu"});
+    M.util.js_complete('theme_essential/coloursswitcher');
+});;
+M.util.js_pending('block_courseadmin/settingsblock');
+require(['block_courseadmin/settingsblock'], function(amd) {
+    amd.init("78537");
+    M.util.js_complete('block_courseadmin/settingsblock');
+});;
+
+require([
+    'jquery',
+    'core_calendar/selectors',
+    'core_calendar/events',
+], function(
+    $,
+    CalendarSelectors,
+    CalendarEvents
+) {
+    var root = $('#month-upcoming-mini-5fb00a947983e5fb00a94632484');
+
+    $('body').on(CalendarEvents.filterChanged, function(e, data) {
+        M.util.js_pending("month-upcoming-mini-5fb00a947983e5fb00a94632484-filterChanged");
+
+        // A filter value has been changed.
+        // Find all matching cells in the popover data, and hide them.
+        var target = $("#month-upcoming-mini-5fb00a947983e5fb00a94632484").find(CalendarSelectors.eventType[data.type]);
+
+        var transitionPromise = $.Deferred();
+        if (data.hidden) {
+            transitionPromise.then(function() {
+                return target.slideUp('fast').promise();
+            });
+        } else {
+            transitionPromise.then(function() {
+                return target.slideDown('fast').promise();
+            });
+        }
+
+        transitionPromise.then(function() {
+            M.util.js_complete("month-upcoming-mini-5fb00a947983e5fb00a94632484-filterChanged");
+
+            return;
+        });
+
+        transitionPromise.resolve();
+    });
+});
+;
+
+require(['jquery', 'core_calendar/calendar_view'], function($, CalendarView) {
+    CalendarView.init($("#calendar-upcoming-block-5fb00a947983e5fb00a94632484"), 'upcoming');
+});
+;
+M.util.js_pending('block_settings/settingsblock');
+require(['block_settings/settingsblock'], function(amd) {
+    amd.init("5", null);
+    M.util.js_complete('block_settings/settingsblock');
+});;
+
+require(['core/yui'], function(Y) {
+    M.util.init_skiplink(Y);
+});
+;
+
+require(['jquery', 'message_popup/message_popover_controller'], function($, controller) {
+    var container = $('#nav-message-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(['core/yui'], function(Y) {
+    Y.use('moodle-core-actionmenu', function() {
+        M.core.actionmenu.init();
+    });
+});
+;
+M.util.js_pending('core/log');
+require(['core/log'], function(amd) {
+    amd.setConfig({"level":"warn"});
+    M.util.js_complete('core/log');
+});M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script type="text/javascript" src="moodleIntro_files/footer.js"></script>
+<script type="text/javascript" src="moodleIntro_files/format.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Zuletzt ge\u00e4ndert","name":"Name","error":"Fehler","info":"Infos","yes":"Ja","no":"Nein","ok":"OK","cancel":"Abbrechen","morehelp":"Weitere Hilfe","loadinghelp":"Wird geladen...","confirm":"Best\u00e4tigen","areyousure":"Sind Sie sicher?","closebuttontitle":"Schlie\u00dfen","unknownerror":"Unbekannter Fehler"},"repository":{"type":"Typ","size":"Gr\u00f6\u00dfe","invalidjson":"Ung\u00fcltiger JSON-Text","nofilesattached":"Keine Datei","filepicker":"Dateiauswahl","logout":"Abmelden","nofilesavailable":"Keine Dateien vorhanden","norepositoriesavailable":"Sie k\u00f6nnen hier zur Zeit keine Dateien hochladen.","fileexistsdialogheader":"Datei bereits vorhanden","fileexistsdialog_editor":"Eine Datei mit diesem Namen wurde bereits an den Text angeh\u00e4ngt, den Sie gerade bearbeiten","fileexistsdialog_filemanager":"Eine Datei mit diesem Namen wurde bereits an den Text angeh\u00e4ngt","renameto":"Nach '{$a}' umbenennen","referencesexist":"{$a} Aliase\/Verkn\u00fcpfungen zu dieser Datei","select":"W\u00e4hlen Sie"},"admin":{"confirmdeletecomments":"M\u00f6chten Sie die Kommentare wirklich l\u00f6schen?","confirmation":"Best\u00e4tigung"},"block":{"addtodock":"Block ins Dock bewegen","undockitem":"Diesen Block abdocken","dockblock":"Block {$a} ins Dock","undockblock":"'{$a}' abdocken","undockall":"Alles abdocken","hidedockpanel":"Dock verbergen","hidepanel":"Steuerung verbergen"},"langconfig":{"thisdirectionvertical":"btt"},"local_fullscreen":{"togglefullscreenmode":"Vollbildmodus umschalten. (Strg+Alt+b)"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-core-dock-loader",function() {M.core.dock.loader.initLoader();
+});
+Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+Y.on('domready', function() { Y.use("moodle-local_fullscreen-fullscreen",function() {M.local_fullscreen.init_fullscreen({"fullscreenmode":"0"});
+}); });
+M.util.help_popups.setup(Y);
+Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
+});
+M.util.init_block_hider(Y, {"id":"inst78538","title":"Kursteilnehmer","preference":"block78538hidden","tooltipVisible":"Block Kursteilnehmer verbergen","tooltipHidden":"Block Kursteilnehmer anzeigen"});
+M.util.init_block_hider(Y, {"id":"inst78539","title":"Suche","preference":"block78539hidden","tooltipVisible":"Block Suche verbergen","tooltipHidden":"Block Suche anzeigen"});
+M.util.init_block_hider(Y, {"id":"inst78540","title":"Aktuelle Termine","preference":"block78540hidden","tooltipVisible":"Block Aktuelle Termine verbergen","tooltipHidden":"Block Aktuelle Termine anzeigen"});
+M.util.init_block_hider(Y, {"id":"inst78541","title":"Pinnwand","preference":"block78541hidden","tooltipVisible":"Block Pinnwand verbergen","tooltipHidden":"Block Pinnwand anzeigen"});
+M.util.init_block_hider(Y, {"id":"inst78542","title":"Neue Aktivit\u00e4ten","preference":"block78542hidden","tooltipVisible":"Block Neue Aktivit\u00e4ten verbergen","tooltipHidden":"Block Neue Aktivit\u00e4ten anzeigen"});
+M.util.init_block_hider(Y, {"id":"inst84304","title":"Personen","preference":"block84304hidden","tooltipVisible":"Block Personen verbergen","tooltipHidden":"Block Personen anzeigen"});
+M.util.init_block_hider(Y, {"id":"inst84306","title":"Personen online","preference":"block84306hidden","tooltipVisible":"Block Personen online verbergen","tooltipHidden":"Block Personen online anzeigen"});
+M.util.init_block_hider(Y, {"id":"inst5","title":"Einstellungen","preference":"block5hidden","tooltipVisible":"Block Einstellungen verbergen","tooltipHidden":"Block Einstellungen anzeigen"});
+ M.util.js_pending('random5fb00a946324819'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5fb00a946324819'); });
+})();
+//]]>
+</script>
+
+
+</body></html>
+<!-- Essential theme version: 2018051907 is developed by Gareth J Barnard: about.me/gjbarnard -->
