@@ -29,7 +29,7 @@ def feature_scaling(feature1, feature2):
 	max_2 = np.amax(feature2)
 	for i in range(len(feature1)):
 		feature1[i] = feature1[i] / max_1
-	for i in range(len(feature2)):
+	for i in range(len(feature2)):	
 		feature2[i] = feature2[i] / max_2
 
 	return feature1, feature2
@@ -46,6 +46,34 @@ def feature_scale(feature):
 def LMS(x, c_x, learning_rate):
 	"""least mean square method"""
 	w = np.random.rand(len(x))
+	w_0 = 1 # random
+	y = w
+	while True:
+		rand_idx = random.randint(0,len(c_x)-1)
+		for i in range(0,len(y)-1):
+			y[i] = w[i]*x[i]
+
+		delta = c_x[rand_idx] - y[rand_idx]
+		delta_w = learning_rate * delta * x[rand_idx]
+		w[rand_idx] = w[rand_idx] + delta_w
+
+		if (RSS(c_x,y) < 0.4):
+			print(RSS(c_x,y))
+			break
+			
+	return w
+
+def RSS(c,y):
+	"""Residual Sum of Squares"""
+	result = 0
+	for i in range(0,len(c)-1):
+		result = pow(c[i]-y[i],2)
+	return result
+
+
+def BGD(x, c_x, learning_rate):
+	"""batch gradient descent """
+	w = np.random.rand(len(x))
 	w_0 = 1
 	y = w
 	ctr = 0
@@ -56,14 +84,9 @@ def LMS(x, c_x, learning_rate):
 			y[i] = w[i]*x[i]
 
 		delta = c_x[rand_idx] - y[rand_idx]
-		#not sure
 		delta_w = learning_rate * delta * x[rand_idx]
 		w[rand_idx] = w[rand_idx] + delta_w
-
-		for i in range(0,len(y)-1):
-			summe = pow((c_x[i]-y[i]),2)
-			print(summe)	
-	print(summe)		
+			
 	return w
 
 
